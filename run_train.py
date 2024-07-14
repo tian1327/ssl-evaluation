@@ -18,7 +18,8 @@ from lib.datasets.iNatDataset import iNatDataset
 dset_root = {}
 dset_root['cub'] = 'data/cub/images'
 dset_root['semi_fungi'] = 'data/semi_fungi'
-dset_root['semi_aves'] = 'data/semi_aves'
+# dset_root['semi_aves'] = 'data/semi_aves'
+dset_root['semi_aves'] = '/scratch/group/real-fs/dataset/semi-aves'
 dset_root['semi_aves_2'] = 'data/semi_aves_2'
 dset_root['semi_inat'] = 'data/semi_inat'
 
@@ -89,6 +90,10 @@ def main(args):
         l_train = 'l_train_val'
     else:
         l_train = 'l_train'
+    
+    if args.trainval_un_in_oracle:
+        l_train = 'l_train_val_utrain_in_oracle'
+        print("Using l_train + val + unlabeled_in_oracle for training!!")
 
     if args.unlabel == 'in':
         u_train = 'u_train_in'
@@ -98,8 +103,12 @@ def main(args):
     ## set val to test when using l_train + val for training
     if args.trainval:
         split_fname = [l_train, u_train, 'test', 'test']
+    elif args.trainval_un_in_oracle:
+        split_fname = [l_train, u_train, 'test', 'test']
     else:
         split_fname = [l_train, u_train, 'val', 'test']
+    
+
 
     image_datasets = {split: iNatDataset(root_path, split_fname[i], args.task,
         transform=data_transforms[split]) \
@@ -120,7 +129,7 @@ def main(args):
         dataloaders_dict['l_train'] = DataLoader(image_datasets['l_train'],
                     batch_size=args.batch_size//2, num_workers=args.num_workers, drop_last=True,
                     sampler=RandomSampler(len(image_datasets['l_train']), args.num_iter * args.batch_size//2))
-    else:
+    else: # supervised
         dataloaders_dict['l_train'] = DataLoader(image_datasets['l_train'],
                     batch_size=args.batch_size, num_workers=args.num_workers, drop_last=True,
                     sampler=RandomSampler(len(image_datasets['l_train']), args.num_iter * args.batch_size))
@@ -190,15 +199,19 @@ def main(args):
                             if 'fc' in k:
                                 continue
                             encoder_state_dict[k] = v
-                    model_ft.load_state_dict(encoder_state_dict, strict=False) 
+                    model_ft.load_state_dict(encoder_state_dict, strict=False)
+
                 elif args.init == 'inat':
                     ## loading inat pre-trained model
                     model_ft = torch.nn.DataParallel(model_ft)
                     del checkpoint['state_dict']['module.fc.bias']
                     del checkpoint['state_dict']['module.fc.weight']
                     model_ft.load_state_dict(checkpoint['state_dict'], strict=False)
+                    # model_ft.load_state_dict(checkpoint['state_dict'], strict=True)
+
                 else:
                     model_ft.load_state_dict(checkpoint['state_dict'])
+
             else:
             	## Continue training, loading from previous checkpoint
                 start_iter = checkpoint['iteration']
@@ -294,7 +307,8 @@ if __name__ == '__main__':
             help="weight decay")
     parser.add_argument('--trainval', action='store_true', 
             help='use {train+val,test,test} for {train,val,test}')
-    
+    parser.add_argument('--trainval_un_in_oracle', action='store_true', 
+            help='use {train+val+unlabeled_in_oracle,test,test} for {train,val,test}')
 
     ### learning rate setup ###
     parser.add_argument("--lr", default=1e-3, type=float, 
@@ -347,7 +361,9 @@ if __name__ == '__main__':
         args.MoCo = False
 
     if args.init == 'inat':
-        args.load_dir = 'models/inat_resnet50.pth.tar'
+        # args.load_dir = 'models/inat_resnet50.pth.tar'
+        args.load_dir = '/scratch/group/real-fs/model_ckpts/inat_resnet50.pth.tar'
+
 
     if args.alg == 'distill':
         if args.MoCo:
