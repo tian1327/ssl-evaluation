@@ -1,0 +1,332 @@
+Using l_train + val + unlabeled_in_oracle + retrieved data for training!!
+######################################################################################################################################################
+Creating Dataloaders
+Root path for split file l_train_val_utrain_in_oracle_T2T500+T2I0.25 is /scratch/group/real-fs
+Reading split file from data/semi_aves/l_train_val_utrain_in_oracle_T2T500+T2I0.25.txt
+All good for split l_train_val_utrain_in_oracle_T2T500+T2I0.25
+# images in l_train_val_utrain_in_oracle_T2T500+T2I0.25: 76241
+Reading split file from data/semi_aves/u_train_in.txt
+All good for split u_train_in
+# images in u_train_in: 26640
+Reading split file from data/semi_aves/test.txt
+All good for split test
+# images in test: 8000
+Reading split file from data/semi_aves/test.txt
+All good for split test
+# images in test: 8000
+
+
+labeled data : 76241, unlabeled data : 26640
+validation data : 8000, test data : 8000
+#classes : 200
+Dataloaders created successfully!
+######################################################################################################################################################
+=> loading checkpoint '/scratch/group/real-fs/model_ckpts/inat_resnet50.pth.tar'
+=> loaded model from '/scratch/group/real-fs/model_ckpts/inat_resnet50.pth.tar'
+using #GPUs: 1
+parameters :  Namespace(MoCo=False, alg='supervised', alpha=0.1, batch_size=32, consis_coef=1.0, continue_training=False, em=0, exp_dir='semi_aves_supervised_in_inat_oracle_retrieved', exp_prefix='results', init='inat', input_size=224, kd_T=1.0, load_dir='/scratch/group/real-fs/model_ckpts/inat_resnet50.pth.tar', lr=0.001, model='resnet50', num_iter=20000, num_workers=12, path_t='', print_freq=100, retrieval_split='T2T500+T2I0.25', root='data', task='semi_aves', threshold=0.95, trainval=False, trainval_un_in_oracle=True, unlabel='in', val_freq=200, warmup=1000, wd=0.0001)
+train | Iteration 100/20000 | Loss 4.440353 | Top1 Acc 16.47% | Top5 Acc 30.53%
+train | Iteration 200/20000 | Loss 3.067028 | Top1 Acc 41.88% | Top5 Acc 62.72%
+Val | Iteration 200/20000 | Loss 3.436397 | Top1 Acc 32.08% | Top5 Acc 52.58%
+train | Iteration 300/20000 | Loss 2.413675 | Top1 Acc 49.97% | Top5 Acc 72.44%
+train | Iteration 400/20000 | Loss 2.157394 | Top1 Acc 52.34% | Top5 Acc 75.69%
+Val | Iteration 400/20000 | Loss 2.533526 | Top1 Acc 43.79% | Top5 Acc 68.44%
+train | Iteration 500/20000 | Loss 1.931665 | Top1 Acc 56.72% | Top5 Acc 78.22%
+train | Iteration 600/20000 | Loss 1.741863 | Top1 Acc 60.91% | Top5 Acc 81.88%
+Val | Iteration 600/20000 | Loss 2.120687 | Top1 Acc 48.80% | Top5 Acc 74.83%
+train | Iteration 700/20000 | Loss 1.638726 | Top1 Acc 61.09% | Top5 Acc 81.94%
+train | Iteration 800/20000 | Loss 1.601487 | Top1 Acc 61.66% | Top5 Acc 82.69%
+Val | Iteration 800/20000 | Loss 1.827040 | Top1 Acc 54.96% | Top5 Acc 79.92%
+train | Iteration 900/20000 | Loss 1.552033 | Top1 Acc 62.88% | Top5 Acc 83.41%
+train | Iteration 1000/20000 | Loss 1.481799 | Top1 Acc 65.19% | Top5 Acc 84.03%
+Val | Iteration 1000/20000 | Loss 1.693059 | Top1 Acc 56.96% | Top5 Acc 82.61%
+train | Iteration 1100/20000 | Loss 1.406811 | Top1 Acc 65.78% | Top5 Acc 85.94%
+train | Iteration 1200/20000 | Loss 1.445130 | Top1 Acc 64.75% | Top5 Acc 84.41%
+Val | Iteration 1200/20000 | Loss 1.576867 | Top1 Acc 59.01% | Top5 Acc 83.85%
+train | Iteration 1300/20000 | Loss 1.423333 | Top1 Acc 65.34% | Top5 Acc 84.62%
+train | Iteration 1400/20000 | Loss 1.382526 | Top1 Acc 66.19% | Top5 Acc 85.06%
+Val | Iteration 1400/20000 | Loss 1.496783 | Top1 Acc 60.83% | Top5 Acc 84.83%
+train | Iteration 1500/20000 | Loss 1.441682 | Top1 Acc 65.03% | Top5 Acc 83.88%
+train | Iteration 1600/20000 | Loss 1.349554 | Top1 Acc 66.53% | Top5 Acc 85.03%
+Val | Iteration 1600/20000 | Loss 1.440105 | Top1 Acc 61.55% | Top5 Acc 85.89%
+train | Iteration 1700/20000 | Loss 1.324591 | Top1 Acc 66.62% | Top5 Acc 85.50%
+train | Iteration 1800/20000 | Loss 1.354232 | Top1 Acc 66.59% | Top5 Acc 85.56%
+Val | Iteration 1800/20000 | Loss 1.416325 | Top1 Acc 62.36% | Top5 Acc 86.36%
+train | Iteration 1900/20000 | Loss 1.330218 | Top1 Acc 66.25% | Top5 Acc 86.25%
+train | Iteration 2000/20000 | Loss 1.325734 | Top1 Acc 66.19% | Top5 Acc 85.03%
+Val | Iteration 2000/20000 | Loss 1.370116 | Top1 Acc 63.54% | Top5 Acc 86.85%
+train | Iteration 2100/20000 | Loss 1.286709 | Top1 Acc 68.09% | Top5 Acc 86.03%
+train | Iteration 2200/20000 | Loss 1.285560 | Top1 Acc 67.50% | Top5 Acc 85.81%
+Val | Iteration 2200/20000 | Loss 1.321704 | Top1 Acc 64.72% | Top5 Acc 87.26%
+train | Iteration 2300/20000 | Loss 1.256687 | Top1 Acc 68.56% | Top5 Acc 87.03%
+train | Iteration 2400/20000 | Loss 1.290542 | Top1 Acc 67.62% | Top5 Acc 85.41%
+Val | Iteration 2400/20000 | Loss 1.296895 | Top1 Acc 65.51% | Top5 Acc 87.66%
+train | Iteration 2500/20000 | Loss 1.210712 | Top1 Acc 69.25% | Top5 Acc 87.28%
+train | Iteration 2600/20000 | Loss 1.190455 | Top1 Acc 69.75% | Top5 Acc 87.50%
+Val | Iteration 2600/20000 | Loss 1.273919 | Top1 Acc 65.78% | Top5 Acc 87.67%
+train | Iteration 2700/20000 | Loss 1.140807 | Top1 Acc 70.31% | Top5 Acc 88.12%
+train | Iteration 2800/20000 | Loss 1.175553 | Top1 Acc 70.06% | Top5 Acc 87.78%
+Val | Iteration 2800/20000 | Loss 1.261156 | Top1 Acc 66.38% | Top5 Acc 87.85%
+train | Iteration 2900/20000 | Loss 1.257232 | Top1 Acc 69.12% | Top5 Acc 85.75%
+train | Iteration 3000/20000 | Loss 1.172089 | Top1 Acc 70.28% | Top5 Acc 87.28%
+Val | Iteration 3000/20000 | Loss 1.219431 | Top1 Acc 66.86% | Top5 Acc 88.58%
+train | Iteration 3100/20000 | Loss 1.205107 | Top1 Acc 69.94% | Top5 Acc 86.50%
+train | Iteration 3200/20000 | Loss 1.137860 | Top1 Acc 71.19% | Top5 Acc 87.34%
+Val | Iteration 3200/20000 | Loss 1.204863 | Top1 Acc 66.95% | Top5 Acc 88.64%
+train | Iteration 3300/20000 | Loss 1.140945 | Top1 Acc 70.47% | Top5 Acc 86.91%
+train | Iteration 3400/20000 | Loss 1.186804 | Top1 Acc 70.22% | Top5 Acc 86.38%
+Val | Iteration 3400/20000 | Loss 1.205450 | Top1 Acc 67.42% | Top5 Acc 88.12%
+train | Iteration 3500/20000 | Loss 1.114352 | Top1 Acc 71.97% | Top5 Acc 88.28%
+train | Iteration 3600/20000 | Loss 1.141611 | Top1 Acc 70.25% | Top5 Acc 87.75%
+Val | Iteration 3600/20000 | Loss 1.165449 | Top1 Acc 68.19% | Top5 Acc 88.86%
+train | Iteration 3700/20000 | Loss 1.072192 | Top1 Acc 73.09% | Top5 Acc 88.94%
+train | Iteration 3800/20000 | Loss 1.160742 | Top1 Acc 70.97% | Top5 Acc 86.38%
+Val | Iteration 3800/20000 | Loss 1.167725 | Top1 Acc 68.25% | Top5 Acc 89.05%
+train | Iteration 3900/20000 | Loss 1.123642 | Top1 Acc 71.56% | Top5 Acc 87.31%
+train | Iteration 4000/20000 | Loss 1.106952 | Top1 Acc 71.47% | Top5 Acc 87.72%
+Val | Iteration 4000/20000 | Loss 1.163968 | Top1 Acc 68.11% | Top5 Acc 89.21%
+train | Iteration 4100/20000 | Loss 1.137044 | Top1 Acc 70.97% | Top5 Acc 87.44%
+train | Iteration 4200/20000 | Loss 1.141215 | Top1 Acc 70.94% | Top5 Acc 87.66%
+Val | Iteration 4200/20000 | Loss 1.167410 | Top1 Acc 68.56% | Top5 Acc 88.76%
+train | Iteration 4300/20000 | Loss 1.148739 | Top1 Acc 70.94% | Top5 Acc 87.41%
+train | Iteration 4400/20000 | Loss 1.094785 | Top1 Acc 71.88% | Top5 Acc 88.19%
+Val | Iteration 4400/20000 | Loss 1.119165 | Top1 Acc 69.50% | Top5 Acc 89.22%
+train | Iteration 4500/20000 | Loss 1.128024 | Top1 Acc 71.44% | Top5 Acc 88.00%
+train | Iteration 4600/20000 | Loss 1.095827 | Top1 Acc 72.16% | Top5 Acc 88.59%
+Val | Iteration 4600/20000 | Loss 1.132662 | Top1 Acc 68.96% | Top5 Acc 89.46%
+train | Iteration 4700/20000 | Loss 1.181549 | Top1 Acc 70.03% | Top5 Acc 86.53%
+train | Iteration 4800/20000 | Loss 1.061755 | Top1 Acc 73.34% | Top5 Acc 88.47%
+Val | Iteration 4800/20000 | Loss 1.127642 | Top1 Acc 69.24% | Top5 Acc 89.15%
+train | Iteration 4900/20000 | Loss 1.080274 | Top1 Acc 72.44% | Top5 Acc 88.50%
+train | Iteration 5000/20000 | Loss 1.087776 | Top1 Acc 72.66% | Top5 Acc 87.84%
+Val | Iteration 5000/20000 | Loss 1.110177 | Top1 Acc 69.84% | Top5 Acc 89.41%
+train | Iteration 5100/20000 | Loss 1.039148 | Top1 Acc 72.78% | Top5 Acc 89.06%
+train | Iteration 5200/20000 | Loss 1.066437 | Top1 Acc 72.81% | Top5 Acc 88.44%
+Val | Iteration 5200/20000 | Loss 1.111336 | Top1 Acc 70.01% | Top5 Acc 89.45%
+train | Iteration 5300/20000 | Loss 1.024804 | Top1 Acc 73.81% | Top5 Acc 88.94%
+train | Iteration 5400/20000 | Loss 1.063269 | Top1 Acc 73.41% | Top5 Acc 88.81%
+Val | Iteration 5400/20000 | Loss 1.088384 | Top1 Acc 70.72% | Top5 Acc 89.42%
+train | Iteration 5500/20000 | Loss 1.044257 | Top1 Acc 74.00% | Top5 Acc 88.09%
+train | Iteration 5600/20000 | Loss 1.086529 | Top1 Acc 72.16% | Top5 Acc 88.44%
+Val | Iteration 5600/20000 | Loss 1.105146 | Top1 Acc 70.15% | Top5 Acc 89.59%
+train | Iteration 5700/20000 | Loss 1.030617 | Top1 Acc 73.53% | Top5 Acc 88.53%
+train | Iteration 5800/20000 | Loss 1.064130 | Top1 Acc 72.81% | Top5 Acc 88.34%
+Val | Iteration 5800/20000 | Loss 1.105126 | Top1 Acc 70.01% | Top5 Acc 89.39%
+train | Iteration 5900/20000 | Loss 0.991976 | Top1 Acc 74.69% | Top5 Acc 88.97%
+train | Iteration 6000/20000 | Loss 1.042458 | Top1 Acc 73.19% | Top5 Acc 89.12%
+Val | Iteration 6000/20000 | Loss 1.094054 | Top1 Acc 70.72% | Top5 Acc 89.54%
+train | Iteration 6100/20000 | Loss 1.029861 | Top1 Acc 73.59% | Top5 Acc 88.84%
+train | Iteration 6200/20000 | Loss 1.025142 | Top1 Acc 73.09% | Top5 Acc 88.53%
+Val | Iteration 6200/20000 | Loss 1.082488 | Top1 Acc 70.79% | Top5 Acc 90.15%
+train | Iteration 6300/20000 | Loss 0.996085 | Top1 Acc 74.72% | Top5 Acc 88.66%
+train | Iteration 6400/20000 | Loss 1.039884 | Top1 Acc 73.69% | Top5 Acc 88.81%
+Val | Iteration 6400/20000 | Loss 1.075934 | Top1 Acc 70.90% | Top5 Acc 89.62%
+train | Iteration 6500/20000 | Loss 1.002035 | Top1 Acc 74.66% | Top5 Acc 89.47%
+train | Iteration 6600/20000 | Loss 1.072452 | Top1 Acc 72.59% | Top5 Acc 88.06%
+Val | Iteration 6600/20000 | Loss 1.067189 | Top1 Acc 71.09% | Top5 Acc 89.62%
+train | Iteration 6700/20000 | Loss 0.995669 | Top1 Acc 74.91% | Top5 Acc 89.81%
+train | Iteration 6800/20000 | Loss 1.054627 | Top1 Acc 72.97% | Top5 Acc 88.75%
+Val | Iteration 6800/20000 | Loss 1.068306 | Top1 Acc 70.91% | Top5 Acc 90.04%
+train | Iteration 6900/20000 | Loss 1.014262 | Top1 Acc 74.06% | Top5 Acc 89.00%
+train | Iteration 7000/20000 | Loss 0.980644 | Top1 Acc 74.38% | Top5 Acc 89.88%
+Val | Iteration 7000/20000 | Loss 1.038283 | Top1 Acc 71.69% | Top5 Acc 90.11%
+train | Iteration 7100/20000 | Loss 0.969605 | Top1 Acc 75.00% | Top5 Acc 89.97%
+train | Iteration 7200/20000 | Loss 0.956734 | Top1 Acc 75.78% | Top5 Acc 89.34%
+Val | Iteration 7200/20000 | Loss 1.048103 | Top1 Acc 71.79% | Top5 Acc 90.15%
+train | Iteration 7300/20000 | Loss 0.934470 | Top1 Acc 74.72% | Top5 Acc 91.06%
+train | Iteration 7400/20000 | Loss 0.955964 | Top1 Acc 75.97% | Top5 Acc 89.81%
+Val | Iteration 7400/20000 | Loss 1.029422 | Top1 Acc 72.09% | Top5 Acc 90.17%
+train | Iteration 7500/20000 | Loss 0.935286 | Top1 Acc 75.94% | Top5 Acc 90.03%
+train | Iteration 7600/20000 | Loss 0.970099 | Top1 Acc 74.69% | Top5 Acc 89.56%
+Val | Iteration 7600/20000 | Loss 1.037076 | Top1 Acc 71.99% | Top5 Acc 90.22%
+train | Iteration 7700/20000 | Loss 0.949547 | Top1 Acc 75.97% | Top5 Acc 89.94%
+train | Iteration 7800/20000 | Loss 1.000102 | Top1 Acc 74.53% | Top5 Acc 89.56%
+Val | Iteration 7800/20000 | Loss 1.018320 | Top1 Acc 72.47% | Top5 Acc 90.28%
+train | Iteration 7900/20000 | Loss 0.977632 | Top1 Acc 75.28% | Top5 Acc 88.72%
+train | Iteration 8000/20000 | Loss 1.010769 | Top1 Acc 74.34% | Top5 Acc 89.03%
+Val | Iteration 8000/20000 | Loss 1.037474 | Top1 Acc 72.19% | Top5 Acc 89.99%
+train | Iteration 8100/20000 | Loss 0.940799 | Top1 Acc 76.38% | Top5 Acc 90.66%
+train | Iteration 8200/20000 | Loss 0.934459 | Top1 Acc 75.59% | Top5 Acc 89.94%
+Val | Iteration 8200/20000 | Loss 1.008118 | Top1 Acc 72.60% | Top5 Acc 90.61%
+train | Iteration 8300/20000 | Loss 0.928919 | Top1 Acc 75.28% | Top5 Acc 90.31%
+train | Iteration 8400/20000 | Loss 0.950751 | Top1 Acc 75.22% | Top5 Acc 89.84%
+Val | Iteration 8400/20000 | Loss 1.009672 | Top1 Acc 72.41% | Top5 Acc 90.79%
+train | Iteration 8500/20000 | Loss 0.962769 | Top1 Acc 75.31% | Top5 Acc 89.69%
+train | Iteration 8600/20000 | Loss 0.961505 | Top1 Acc 75.81% | Top5 Acc 89.00%
+Val | Iteration 8600/20000 | Loss 1.007615 | Top1 Acc 72.65% | Top5 Acc 90.67%
+train | Iteration 8700/20000 | Loss 0.925179 | Top1 Acc 76.53% | Top5 Acc 90.09%
+train | Iteration 8800/20000 | Loss 0.954317 | Top1 Acc 75.22% | Top5 Acc 89.50%
+Val | Iteration 8800/20000 | Loss 1.013204 | Top1 Acc 72.53% | Top5 Acc 90.74%
+train | Iteration 8900/20000 | Loss 0.928986 | Top1 Acc 76.03% | Top5 Acc 89.91%
+train | Iteration 9000/20000 | Loss 0.949045 | Top1 Acc 75.38% | Top5 Acc 89.44%
+Val | Iteration 9000/20000 | Loss 1.009330 | Top1 Acc 72.75% | Top5 Acc 90.71%
+train | Iteration 9100/20000 | Loss 0.929122 | Top1 Acc 75.78% | Top5 Acc 90.06%
+train | Iteration 9200/20000 | Loss 0.940452 | Top1 Acc 75.19% | Top5 Acc 90.28%
+Val | Iteration 9200/20000 | Loss 0.998100 | Top1 Acc 73.06% | Top5 Acc 90.71%
+train | Iteration 9300/20000 | Loss 0.937746 | Top1 Acc 76.22% | Top5 Acc 89.91%
+train | Iteration 9400/20000 | Loss 0.900732 | Top1 Acc 77.31% | Top5 Acc 90.62%
+Val | Iteration 9400/20000 | Loss 1.005463 | Top1 Acc 72.84% | Top5 Acc 90.72%
+train | Iteration 9500/20000 | Loss 0.937302 | Top1 Acc 76.12% | Top5 Acc 89.47%
+train | Iteration 9600/20000 | Loss 0.870671 | Top1 Acc 77.88% | Top5 Acc 90.59%
+Val | Iteration 9600/20000 | Loss 0.991155 | Top1 Acc 73.01% | Top5 Acc 90.72%
+train | Iteration 9700/20000 | Loss 0.877693 | Top1 Acc 77.38% | Top5 Acc 90.78%
+train | Iteration 9800/20000 | Loss 0.831258 | Top1 Acc 78.78% | Top5 Acc 91.09%
+Val | Iteration 9800/20000 | Loss 0.987831 | Top1 Acc 73.67% | Top5 Acc 90.64%
+train | Iteration 9900/20000 | Loss 0.875976 | Top1 Acc 76.53% | Top5 Acc 90.62%
+train | Iteration 10000/20000 | Loss 0.875058 | Top1 Acc 77.12% | Top5 Acc 90.53%
+Val | Iteration 10000/20000 | Loss 0.996850 | Top1 Acc 73.20% | Top5 Acc 90.80%
+train | Iteration 10100/20000 | Loss 0.904236 | Top1 Acc 77.19% | Top5 Acc 90.34%
+train | Iteration 10200/20000 | Loss 0.847229 | Top1 Acc 78.28% | Top5 Acc 91.31%
+Val | Iteration 10200/20000 | Loss 0.986414 | Top1 Acc 73.44% | Top5 Acc 90.86%
+train | Iteration 10300/20000 | Loss 0.872043 | Top1 Acc 76.97% | Top5 Acc 90.88%
+train | Iteration 10400/20000 | Loss 0.892077 | Top1 Acc 77.22% | Top5 Acc 90.09%
+Val | Iteration 10400/20000 | Loss 0.983920 | Top1 Acc 73.25% | Top5 Acc 90.75%
+train | Iteration 10500/20000 | Loss 0.849155 | Top1 Acc 78.41% | Top5 Acc 90.41%
+train | Iteration 10600/20000 | Loss 0.960600 | Top1 Acc 75.28% | Top5 Acc 89.78%
+Val | Iteration 10600/20000 | Loss 0.977743 | Top1 Acc 73.36% | Top5 Acc 90.95%
+train | Iteration 10700/20000 | Loss 0.894514 | Top1 Acc 76.53% | Top5 Acc 90.47%
+train | Iteration 10800/20000 | Loss 0.885860 | Top1 Acc 77.62% | Top5 Acc 90.69%
+Val | Iteration 10800/20000 | Loss 0.980582 | Top1 Acc 73.64% | Top5 Acc 90.67%
+train | Iteration 10900/20000 | Loss 0.900406 | Top1 Acc 77.00% | Top5 Acc 90.50%
+train | Iteration 11000/20000 | Loss 0.930612 | Top1 Acc 75.53% | Top5 Acc 89.97%
+Val | Iteration 11000/20000 | Loss 0.960579 | Top1 Acc 73.84% | Top5 Acc 90.92%
+train | Iteration 11100/20000 | Loss 0.946160 | Top1 Acc 75.66% | Top5 Acc 89.47%
+train | Iteration 11200/20000 | Loss 0.861215 | Top1 Acc 77.34% | Top5 Acc 91.06%
+Val | Iteration 11200/20000 | Loss 0.974511 | Top1 Acc 73.41% | Top5 Acc 90.85%
+train | Iteration 11300/20000 | Loss 0.910239 | Top1 Acc 76.41% | Top5 Acc 90.41%
+train | Iteration 11400/20000 | Loss 0.873188 | Top1 Acc 77.41% | Top5 Acc 90.78%
+Val | Iteration 11400/20000 | Loss 0.949410 | Top1 Acc 74.30% | Top5 Acc 91.16%
+train | Iteration 11500/20000 | Loss 0.887725 | Top1 Acc 76.47% | Top5 Acc 90.28%
+train | Iteration 11600/20000 | Loss 0.890030 | Top1 Acc 77.94% | Top5 Acc 90.72%
+Val | Iteration 11600/20000 | Loss 0.961761 | Top1 Acc 74.21% | Top5 Acc 91.16%
+train | Iteration 11700/20000 | Loss 0.825981 | Top1 Acc 78.75% | Top5 Acc 91.00%
+train | Iteration 11800/20000 | Loss 0.897250 | Top1 Acc 76.34% | Top5 Acc 90.12%
+Val | Iteration 11800/20000 | Loss 0.952264 | Top1 Acc 74.41% | Top5 Acc 91.12%
+train | Iteration 11900/20000 | Loss 0.857482 | Top1 Acc 77.56% | Top5 Acc 90.72%
+train | Iteration 12000/20000 | Loss 0.862377 | Top1 Acc 77.50% | Top5 Acc 91.16%
+Val | Iteration 12000/20000 | Loss 0.941589 | Top1 Acc 74.78% | Top5 Acc 91.15%
+train | Iteration 12100/20000 | Loss 0.847986 | Top1 Acc 78.31% | Top5 Acc 90.84%
+train | Iteration 12200/20000 | Loss 0.832899 | Top1 Acc 77.84% | Top5 Acc 91.12%
+Val | Iteration 12200/20000 | Loss 0.964046 | Top1 Acc 74.11% | Top5 Acc 90.94%
+train | Iteration 12300/20000 | Loss 0.851305 | Top1 Acc 78.53% | Top5 Acc 90.69%
+train | Iteration 12400/20000 | Loss 0.841162 | Top1 Acc 79.03% | Top5 Acc 91.38%
+Val | Iteration 12400/20000 | Loss 0.948401 | Top1 Acc 74.36% | Top5 Acc 91.30%
+train | Iteration 12500/20000 | Loss 0.804580 | Top1 Acc 79.47% | Top5 Acc 91.81%
+train | Iteration 12600/20000 | Loss 0.818862 | Top1 Acc 78.56% | Top5 Acc 91.34%
+Val | Iteration 12600/20000 | Loss 0.945628 | Top1 Acc 74.25% | Top5 Acc 91.09%
+train | Iteration 12700/20000 | Loss 0.868310 | Top1 Acc 77.75% | Top5 Acc 90.44%
+train | Iteration 12800/20000 | Loss 0.817099 | Top1 Acc 78.72% | Top5 Acc 91.09%
+Val | Iteration 12800/20000 | Loss 0.943500 | Top1 Acc 74.31% | Top5 Acc 91.45%
+train | Iteration 12900/20000 | Loss 0.862325 | Top1 Acc 78.25% | Top5 Acc 90.47%
+train | Iteration 13000/20000 | Loss 0.814925 | Top1 Acc 79.66% | Top5 Acc 91.34%
+Val | Iteration 13000/20000 | Loss 0.940599 | Top1 Acc 74.78% | Top5 Acc 91.42%
+train | Iteration 13100/20000 | Loss 0.874085 | Top1 Acc 78.09% | Top5 Acc 90.66%
+train | Iteration 13200/20000 | Loss 0.787867 | Top1 Acc 79.28% | Top5 Acc 92.00%
+Val | Iteration 13200/20000 | Loss 0.936201 | Top1 Acc 74.65% | Top5 Acc 91.49%
+train | Iteration 13300/20000 | Loss 0.839592 | Top1 Acc 78.53% | Top5 Acc 90.78%
+train | Iteration 13400/20000 | Loss 0.858850 | Top1 Acc 78.31% | Top5 Acc 90.84%
+Val | Iteration 13400/20000 | Loss 0.924654 | Top1 Acc 75.11% | Top5 Acc 91.47%
+train | Iteration 13500/20000 | Loss 0.835386 | Top1 Acc 78.41% | Top5 Acc 91.06%
+train | Iteration 13600/20000 | Loss 0.853395 | Top1 Acc 78.66% | Top5 Acc 90.53%
+Val | Iteration 13600/20000 | Loss 0.926554 | Top1 Acc 75.00% | Top5 Acc 91.49%
+train | Iteration 13700/20000 | Loss 0.844498 | Top1 Acc 78.22% | Top5 Acc 90.72%
+train | Iteration 13800/20000 | Loss 0.861165 | Top1 Acc 77.75% | Top5 Acc 91.53%
+Val | Iteration 13800/20000 | Loss 0.941735 | Top1 Acc 74.55% | Top5 Acc 91.22%
+train | Iteration 13900/20000 | Loss 0.819436 | Top1 Acc 79.38% | Top5 Acc 91.12%
+train | Iteration 14000/20000 | Loss 0.840157 | Top1 Acc 78.78% | Top5 Acc 90.91%
+Val | Iteration 14000/20000 | Loss 0.927429 | Top1 Acc 75.06% | Top5 Acc 91.44%
+train | Iteration 14100/20000 | Loss 0.804909 | Top1 Acc 78.91% | Top5 Acc 91.56%
+train | Iteration 14200/20000 | Loss 0.822252 | Top1 Acc 77.91% | Top5 Acc 91.25%
+Val | Iteration 14200/20000 | Loss 0.914405 | Top1 Acc 75.19% | Top5 Acc 91.53%
+train | Iteration 14300/20000 | Loss 0.797247 | Top1 Acc 79.44% | Top5 Acc 92.19%
+train | Iteration 14400/20000 | Loss 0.800909 | Top1 Acc 80.03% | Top5 Acc 91.91%
+Val | Iteration 14400/20000 | Loss 0.916379 | Top1 Acc 75.04% | Top5 Acc 91.54%
+train | Iteration 14500/20000 | Loss 0.825513 | Top1 Acc 78.66% | Top5 Acc 91.22%
+train | Iteration 14600/20000 | Loss 0.837329 | Top1 Acc 78.66% | Top5 Acc 90.69%
+Val | Iteration 14600/20000 | Loss 0.910973 | Top1 Acc 75.17% | Top5 Acc 91.55%
+train | Iteration 14700/20000 | Loss 0.843335 | Top1 Acc 77.91% | Top5 Acc 90.91%
+train | Iteration 14800/20000 | Loss 0.802745 | Top1 Acc 79.38% | Top5 Acc 91.56%
+Val | Iteration 14800/20000 | Loss 0.914766 | Top1 Acc 75.29% | Top5 Acc 91.55%
+train | Iteration 14900/20000 | Loss 0.808392 | Top1 Acc 78.53% | Top5 Acc 91.44%
+train | Iteration 15000/20000 | Loss 0.837322 | Top1 Acc 78.88% | Top5 Acc 90.94%
+Val | Iteration 15000/20000 | Loss 0.907354 | Top1 Acc 75.53% | Top5 Acc 91.59%
+train | Iteration 15100/20000 | Loss 0.820204 | Top1 Acc 79.12% | Top5 Acc 91.41%
+train | Iteration 15200/20000 | Loss 0.822628 | Top1 Acc 78.78% | Top5 Acc 90.78%
+Val | Iteration 15200/20000 | Loss 0.913660 | Top1 Acc 75.01% | Top5 Acc 91.60%
+train | Iteration 15300/20000 | Loss 0.756414 | Top1 Acc 80.50% | Top5 Acc 92.12%
+train | Iteration 15400/20000 | Loss 0.804114 | Top1 Acc 79.62% | Top5 Acc 91.56%
+Val | Iteration 15400/20000 | Loss 0.906551 | Top1 Acc 75.22% | Top5 Acc 91.66%
+train | Iteration 15500/20000 | Loss 0.804912 | Top1 Acc 79.50% | Top5 Acc 91.50%
+train | Iteration 15600/20000 | Loss 0.802083 | Top1 Acc 79.25% | Top5 Acc 91.88%
+Val | Iteration 15600/20000 | Loss 0.903685 | Top1 Acc 75.29% | Top5 Acc 91.59%
+train | Iteration 15700/20000 | Loss 0.835482 | Top1 Acc 78.78% | Top5 Acc 90.72%
+train | Iteration 15800/20000 | Loss 0.803836 | Top1 Acc 78.88% | Top5 Acc 91.34%
+Val | Iteration 15800/20000 | Loss 0.907498 | Top1 Acc 75.34% | Top5 Acc 91.86%
+train | Iteration 15900/20000 | Loss 0.806731 | Top1 Acc 79.34% | Top5 Acc 91.09%
+train | Iteration 16000/20000 | Loss 0.809622 | Top1 Acc 78.91% | Top5 Acc 91.56%
+Val | Iteration 16000/20000 | Loss 0.899282 | Top1 Acc 75.61% | Top5 Acc 91.72%
+train | Iteration 16100/20000 | Loss 0.802318 | Top1 Acc 79.81% | Top5 Acc 91.59%
+train | Iteration 16200/20000 | Loss 0.785836 | Top1 Acc 79.75% | Top5 Acc 92.25%
+Val | Iteration 16200/20000 | Loss 0.908431 | Top1 Acc 75.49% | Top5 Acc 91.71%
+train | Iteration 16300/20000 | Loss 0.853471 | Top1 Acc 78.94% | Top5 Acc 90.88%
+train | Iteration 16400/20000 | Loss 0.801263 | Top1 Acc 79.84% | Top5 Acc 91.38%
+Val | Iteration 16400/20000 | Loss 0.899797 | Top1 Acc 75.36% | Top5 Acc 91.70%
+train | Iteration 16500/20000 | Loss 0.851436 | Top1 Acc 78.38% | Top5 Acc 91.28%
+train | Iteration 16600/20000 | Loss 0.810654 | Top1 Acc 79.09% | Top5 Acc 91.41%
+Val | Iteration 16600/20000 | Loss 0.893909 | Top1 Acc 75.60% | Top5 Acc 91.66%
+train | Iteration 16700/20000 | Loss 0.793747 | Top1 Acc 79.78% | Top5 Acc 91.75%
+train | Iteration 16800/20000 | Loss 0.816258 | Top1 Acc 79.31% | Top5 Acc 90.53%
+Val | Iteration 16800/20000 | Loss 0.902317 | Top1 Acc 75.39% | Top5 Acc 91.76%
+train | Iteration 16900/20000 | Loss 0.777899 | Top1 Acc 79.66% | Top5 Acc 91.97%
+train | Iteration 17000/20000 | Loss 0.773097 | Top1 Acc 79.69% | Top5 Acc 91.88%
+Val | Iteration 17000/20000 | Loss 0.896952 | Top1 Acc 75.76% | Top5 Acc 91.70%
+train | Iteration 17100/20000 | Loss 0.777328 | Top1 Acc 79.94% | Top5 Acc 91.75%
+train | Iteration 17200/20000 | Loss 0.783086 | Top1 Acc 79.34% | Top5 Acc 91.91%
+Val | Iteration 17200/20000 | Loss 0.894109 | Top1 Acc 75.71% | Top5 Acc 91.88%
+train | Iteration 17300/20000 | Loss 0.773486 | Top1 Acc 80.03% | Top5 Acc 92.06%
+train | Iteration 17400/20000 | Loss 0.798538 | Top1 Acc 79.47% | Top5 Acc 91.56%
+Val | Iteration 17400/20000 | Loss 0.900829 | Top1 Acc 75.74% | Top5 Acc 91.85%
+train | Iteration 17500/20000 | Loss 0.831390 | Top1 Acc 78.78% | Top5 Acc 90.72%
+train | Iteration 17600/20000 | Loss 0.791272 | Top1 Acc 79.62% | Top5 Acc 91.56%
+Val | Iteration 17600/20000 | Loss 0.900154 | Top1 Acc 75.65% | Top5 Acc 91.85%
+train | Iteration 17700/20000 | Loss 0.805269 | Top1 Acc 79.47% | Top5 Acc 91.19%
+train | Iteration 17800/20000 | Loss 0.773267 | Top1 Acc 80.66% | Top5 Acc 91.91%
+Val | Iteration 17800/20000 | Loss 0.899684 | Top1 Acc 75.69% | Top5 Acc 91.79%
+train | Iteration 17900/20000 | Loss 0.788997 | Top1 Acc 79.91% | Top5 Acc 91.72%
+train | Iteration 18000/20000 | Loss 0.806533 | Top1 Acc 79.41% | Top5 Acc 91.72%
+Val | Iteration 18000/20000 | Loss 0.896709 | Top1 Acc 75.64% | Top5 Acc 91.86%
+train | Iteration 18100/20000 | Loss 0.793875 | Top1 Acc 79.38% | Top5 Acc 91.72%
+train | Iteration 18200/20000 | Loss 0.825772 | Top1 Acc 79.41% | Top5 Acc 90.69%
+Val | Iteration 18200/20000 | Loss 0.896608 | Top1 Acc 75.54% | Top5 Acc 91.70%
+train | Iteration 18300/20000 | Loss 0.819369 | Top1 Acc 79.81% | Top5 Acc 90.66%
+train | Iteration 18400/20000 | Loss 0.787240 | Top1 Acc 80.41% | Top5 Acc 91.44%
+Val | Iteration 18400/20000 | Loss 0.897929 | Top1 Acc 75.34% | Top5 Acc 91.90%
+train | Iteration 18500/20000 | Loss 0.794233 | Top1 Acc 79.50% | Top5 Acc 91.44%
+train | Iteration 18600/20000 | Loss 0.789731 | Top1 Acc 79.53% | Top5 Acc 91.47%
+Val | Iteration 18600/20000 | Loss 0.895164 | Top1 Acc 75.74% | Top5 Acc 91.79%
+train | Iteration 18700/20000 | Loss 0.780568 | Top1 Acc 79.78% | Top5 Acc 91.62%
+train | Iteration 18800/20000 | Loss 0.830780 | Top1 Acc 79.28% | Top5 Acc 90.97%
+Val | Iteration 18800/20000 | Loss 0.896132 | Top1 Acc 75.66% | Top5 Acc 91.74%
+train | Iteration 18900/20000 | Loss 0.791299 | Top1 Acc 79.88% | Top5 Acc 91.25%
+train | Iteration 19000/20000 | Loss 0.829717 | Top1 Acc 79.41% | Top5 Acc 90.81%
+Val | Iteration 19000/20000 | Loss 0.892412 | Top1 Acc 75.79% | Top5 Acc 91.71%
+train | Iteration 19100/20000 | Loss 0.828349 | Top1 Acc 78.69% | Top5 Acc 91.06%
+train | Iteration 19200/20000 | Loss 0.769873 | Top1 Acc 80.31% | Top5 Acc 92.22%
+Val | Iteration 19200/20000 | Loss 0.893322 | Top1 Acc 75.78% | Top5 Acc 91.88%
+train | Iteration 19300/20000 | Loss 0.823663 | Top1 Acc 79.38% | Top5 Acc 90.59%
+train | Iteration 19400/20000 | Loss 0.790589 | Top1 Acc 79.78% | Top5 Acc 91.38%
+Val | Iteration 19400/20000 | Loss 0.892511 | Top1 Acc 75.74% | Top5 Acc 91.83%
+train | Iteration 19500/20000 | Loss 0.744649 | Top1 Acc 81.22% | Top5 Acc 92.56%
+train | Iteration 19600/20000 | Loss 0.792438 | Top1 Acc 79.84% | Top5 Acc 91.31%
+Val | Iteration 19600/20000 | Loss 0.889839 | Top1 Acc 75.71% | Top5 Acc 91.78%
+train | Iteration 19700/20000 | Loss 0.793599 | Top1 Acc 79.81% | Top5 Acc 91.38%
+train | Iteration 19800/20000 | Loss 0.822424 | Top1 Acc 78.94% | Top5 Acc 91.06%
+Val | Iteration 19800/20000 | Loss 0.899999 | Top1 Acc 75.51% | Top5 Acc 91.74%
+train | Iteration 19900/20000 | Loss 0.766519 | Top1 Acc 79.56% | Top5 Acc 92.06%
+train | Iteration 20000/20000 | Loss 0.793211 | Top1 Acc 80.00% | Top5 Acc 91.50%
+Val | Iteration 20000/20000 | Loss 0.898906 | Top1 Acc 75.64% | Top5 Acc 91.60%
+Training complete in 36m 60s
+Best val Acc: 75.79%
+testLast Loss: 0.8978 Top1 Acc: 75.69% Top5 Acc: 91.70%
+testBest Loss: 0.8924 Top1 Acc: 75.79% Top5 Acc: 91.71%
+DeprecationWarning: 'source deactivate' is deprecated. Use 'conda deactivate'.

@@ -24,6 +24,7 @@ dset_root['semi_aves_2'] = 'data/semi_aves_2'
 dset_root['semi_inat'] = 'data/semi_inat'
 
 
+
 class RandomSampler(torch.utils.data.Sampler):
     """ sampling without replacement """
     def __init__(self, num_data, num_sample):
@@ -93,7 +94,13 @@ def main(args):
     
     if args.trainval_un_in_oracle:
         l_train = 'l_train_val_utrain_in_oracle'
-        print("Using l_train + val + unlabeled_in_oracle for training!!")
+        if args.retrieval_split is None:
+            print("Using l_train + val + unlabeled_in_oracle for training!!")
+    
+    if args.retrieval_split is not None:
+            l_train = l_train + '_' + args.retrieval_split
+            print("Using l_train + val + unlabeled_in_oracle + retrieved data for training!!")
+
 
     if args.unlabel == 'in':
         u_train = 'u_train_in'
@@ -108,12 +115,14 @@ def main(args):
     else:
         split_fname = [l_train, u_train, 'val', 'test']
     
-
+    print("#"*150)
+    print("Creating Dataloaders")
 
     image_datasets = {split: iNatDataset(root_path, split_fname[i], args.task,
-        transform=data_transforms[split]) \
+        transform=data_transforms[split], retrieved = args.retrieval_split) \
         for i,split in enumerate(['l_train', 'u_train', 'val', 'test'])}
 
+    print("\n")
     print("labeled data : {}, unlabeled data : {}".format(len(image_datasets['l_train']), len(image_datasets['u_train'])))
     print("validation data : {}, test data : {}".format(len(image_datasets['val']), len(image_datasets['test'])))
 
@@ -143,6 +152,9 @@ def main(args):
                     batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers, drop_last=False)
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
+    print("Dataloaders created successfully!")
+    print("#"*150)
 
     #======================= Initialize the model ==============================
     model_ft = initialize_model(args.model, num_classes, feature_extract=False, 
@@ -309,6 +321,8 @@ if __name__ == '__main__':
             help='use {train+val,test,test} for {train,val,test}')
     parser.add_argument('--trainval_un_in_oracle', action='store_true', 
             help='use {train+val+unlabeled_in_oracle,test,test} for {train,val,test}')
+    parser.add_argument('--retrieval_split', default=None,type=str, 
+            help='split to use for {retrieved in combination with train/val/unlabeled_in_oracle,test,test} for {train,val,test}')
 
     ### learning rate setup ###
     parser.add_argument("--lr", default=1e-3, type=float, 

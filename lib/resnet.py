@@ -22,6 +22,9 @@ model_urls = {
     'wide_resnet101_2': 'https://download.pytorch.org/models/wide_resnet101_2-32ee1156.pth',
 }
 
+local_model_paths = {
+    'resnet50': '/scratch/group/real-fs/model_ckpts/resnet50-19c8e357.pth'
+}
 
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
     """3x3 convolution with padding"""
@@ -245,8 +248,16 @@ class BatchNorm2d(nn.BatchNorm2d):
 def _resnet(arch, block, layers, pretrained, progress, **kwargs):
     model = ResNet(block, layers, **kwargs)
     if pretrained:
-        state_dict = load_state_dict_from_url(model_urls[arch],
+        try:
+            state_dict = load_state_dict_from_url(model_urls[arch],
                                               progress=progress)
+        except Exception as e:
+            print(f"Download failed: {e}")
+            print("Loading model weights from local path.")
+            if arch in local_model_paths:
+                state_dict = torch.load(local_model_paths[arch])
+            else:
+                raise RuntimeError(f"Failed to download model weights for {arch} and no local path is provided.")
         model.load_state_dict(state_dict, strict=False)### Modified ###
     return model
 
