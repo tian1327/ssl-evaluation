@@ -278,7 +278,7 @@ if __name__ == '__main__':
     parser.add_argument('--task', default='semi_aves', type=str, 
             help='the name of the dataset')
     parser.add_argument('--model', default='resnet50', type=str,
-            help='resnet50|resnet101|wrn')
+            help='resnet50|resnet101|wrn|dinov2_vitb14_reg')
     parser.add_argument('--batch_size', default=32, type=int,
             help='size of mini-batch')
     parser.add_argument('--num_iter', default=200, type=int,

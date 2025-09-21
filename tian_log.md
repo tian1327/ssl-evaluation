@@ -24,3 +24,11 @@ python run_train.py --task semi_aves --init imagenet --alg supervised --unlabel 
 python run_train.py --task semi_aves --init imagenet --alg supervised --unlabel in --num_iter 10000 --lr 1e-3 --wd 1e-4 --exp_dir semi_aves_supervised_in_imagenet --MoCo false --trainval_un_in_oracle
 
 ```
+
+
+```bash
+# run dinov2 pretrained encoder
+# try imagenet pretrained resnet50 on ltrain+val
+python run_train.py --task semi_aves --model dinov2_vitb14_reg_lc --init scratch --alg supervised --unlabel in --num_iter 15000 --lr 1e-3 --wd 1e-4 --exp_dir semi_aves_supervised_in_dinov2 --MoCo false --trainval
+
+```
